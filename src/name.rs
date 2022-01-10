@@ -44,7 +44,7 @@ fn return_culture_ship_name() -> status::Accepted<String> {
         .choose_multiple(&mut rand::thread_rng(), 1)
         .collect();
 
-    status::Accepted(Some(format!("name: '{}'", culture_ship[0])))
+    status::Accepted(Some(format!("{{\"name\": \"{}\"}}", culture_ship[0])))
 }
 
 pub fn stage() -> rocket::fairing::AdHoc {
